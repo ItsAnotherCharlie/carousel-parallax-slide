@@ -1,7 +1,50 @@
 body {
     background-color: #000;
+    font-family: 'Nunito', sans-serif;
     padding: 0;
     margin: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    margin: 0 auto;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+@media(min-width:992px) {
+    header {
+        width: 96%;
+    }
+}
+
+header .logo img {
+    width: 80px;
+}
+
+header .toggle .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+header .toggle .menu a {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    transition: .6s;
+}
+
+header .toggle a:hover {
+    color: #e4007c;
 }
 
 .overlay {
@@ -12,7 +55,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .hero-slider {
@@ -55,40 +98,42 @@ body {
     text-align: center;
 }
 
-.hero-slider .carousel-cell .inner .subtitulo {
-    font-family: 'Nunito', sans-serif;
-    font-size: 2.2rem;
-    line-height: 1.2em;
-    font-weight: 300;
-    letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 5px;
+.hero-slider .carousel-cell .inner .titulo {
+    font-size: 4.8em;
+    line-height: 1em;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+    margin-bottom: 16px;
 }
 
-.hero-slider .carousel-cell .inner .titulo {
-    font-family: 'Nunito', sans-serif;
-    font-size: 3rem;
+.hero-slider .carousel-cell .inner .subtitulo {
+    font-size: 2.2rem;
     line-height: 1.2em;
+    font-weight: normal;
     letter-spacing: 3px;
-    margin-top: 20px;
+    color: rgb(255, 255, 255);
+    margin-top: 0;
     margin-bottom: 40px;
 }
 
 .hero-slider .carousel-cell .inner .btn {
-    border: 1px solid #FFF;
+    background-color: #e4007c;
+    font-weight: bold;
     padding: 14px 18px;
     text-transform: uppercase;
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.8rem;
+    font-size: .9rem;
     letter-spacing: 3px;
     color: #FFF;
     text-decoration: none;
-    transition: all 0.2s ease;
+    box-shadow: -1px 6px 12px -2px rgba(0,0,0,0.59);
+    -webkit-box-shadow: -1px 6px 12px -2px rgba(0,0,0,0.59);
+    -moz-box-shadow: -1px 6px 12px -2px rgba(0,0,0,0.59);
+    transition: .6s;
 }
 
 .hero-slider .carousel-cell .inner .btn:hover {
-    background: #E4007C;
-    color: #FFF;
+    background: #FFF;
+    color: #E4007C;
 }
 
 .hero-slider .flickity-prev-next-button {
@@ -121,4 +166,15 @@ body {
 .hero-slider .flickity-page-dots .dot.is-selected {
     background: #E4007C;
     border: 0 solid #E4007C;
+}
+
+@media (max-width: 768px) {
+    .hero-slider .carousel-cell .inner .titulo {
+        font-size: 2.8em;
+    }
+
+    .hero-slider .carousel-cell .inner .subtitulo {
+        font-size: 1.4em;
+        margin-bottom: 24px;
+    }
 }
